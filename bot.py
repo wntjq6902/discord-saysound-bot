@@ -7,7 +7,7 @@ token = ('Mzk5Mjg4NzQ3MDA0MjY0NDYx.DTK6YA.Z6-pNZTTqTDil3PyzTI9hILGLv4')
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('!'), description=description)
 soundlist = ['그만', '병신', '앙대', '개소리', '지랄', '거짓말', '좋아', '세계']
 soundfilename = ['stop', 'idiot', 'no', 'dog', 'retard', 'lie', 'good', 'world']
-path = 'E:\\saysoundbot\\sounds\\'
+path = '\\sounds\\'
 playing = False
 debug = False
 
