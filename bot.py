@@ -3,21 +3,26 @@ import discord
 from discord.ext import commands
 
 description = 'a basic say sound bot'
-token = 'your bot account\'s token goes here.'
+token = ('Mzk5Mjg4NzQ3MDA0MjY0NDYx.DTK6YA.Z6-pNZTTqTDil3PyzTI9hILGLv4')
 bot = commands.Bot(command_prefix=commands.when_mentioned_or('!'), description=description)
-soundlist = ['your sounds goes here']
-soundfilename = ['your sound files goes here. note it has to be .m4a format.']
-path = 'sound file path goes here. note \ has to be enterd twice.'
+soundlist = ['그만', '병신', '앙대', '개소리', '지랄', '거짓말', '좋아', '세계']
+soundfilename = ['stop', 'idiot', 'no', 'dog', 'retard', 'lie', 'good', 'world']
+path = 'E:\\saysoundbot\\sounds\\'
 playing = False
 debug = False
 
 if not discord.opus.is_loaded():
+	# the 'opus' library here is opus.dll on windows
+	# or libopus.so on linux in the current directory
+	# you should replace this with the location the
+	# opus library is located in and with the proper filename.
+	# note that on windows this DLL is automatically provided for you
 	discord.opus.load_opus('opus')
 
 @bot.event
 async def on_ready():
 	print('Logged in as:\n{0} (ID: {0.id})'.format(bot.user))
-	channel = bot.get_channel('voice channel id goes here')
+	channel = bot.get_channel('398896214629941252')
 	global voice
 	voice = await bot.join_voice_channel(channel)
 	await bot.change_presence(game=discord.Game(name='ran🅱om dank 🅱eme soun🅱s'))
